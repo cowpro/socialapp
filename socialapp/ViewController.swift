@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     "ID": userUid as Any,
                     "currentPostNumber": 0
                     ] as [String : Any]
-                Database.database().reference().child("users").child(self.usernameField.text as Any as! String).setValue(userData)
+                Database.database().reference().child("users").child(userUid).setValue(userData)
             }
         }
     }

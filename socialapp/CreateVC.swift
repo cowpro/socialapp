@@ -43,6 +43,7 @@ class CreateVC: UIViewController, UITextViewDelegate {
     
     @IBAction func createPost(_ sender: Any) {
         uploadToFirebase()
+        performSegue(withIdentifier: "backToFeed", sender: self)
     }
     func uploadToFirebase() {
         let userUid = Auth.auth().currentUser!.uid
@@ -51,7 +52,7 @@ class CreateVC: UIViewController, UITextViewDelegate {
             // Get user value
             print (snapshot.key)
             let value = snapshot.value as! NSDictionary
-            var postID = value["currentPostNumber"] as! Int
+            let postID = value["currentPostNumber"] as! Int
             if let data = self.userImgView.image!.jpegData(compressionQuality: 0.2) {
                 let storageRef = Storage.storage().reference(withPath: "/posts/\(String(describing: userUid))/\(postID).jpeg")
                 let uploadMetadata = StorageMetadata()

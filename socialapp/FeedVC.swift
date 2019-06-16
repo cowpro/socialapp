@@ -11,6 +11,9 @@ import SwiftKeychainWrapper
 
 class FeedVC: UITableViewController{
     
+    @IBAction func backToFeed(segue:UIStoryboardSegue) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nav = self.navigationController?.navigationBar
