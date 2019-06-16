@@ -9,14 +9,20 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UITableViewController {
+class FeedVC: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.yellow
+        navigationItem.title = "Fifer"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(create))
+        let tab = self.tabBarController?.tabBar
+        tab?.barStyle = UIBarStyle.black
+        tab?.tintColor = UIColor.yellow
+        tabBarItem.title = "Feed"
     }
 
     
@@ -41,5 +47,8 @@ class FeedVC: UITableViewController {
             print ("Error signing out: %@", signOutError)
         }
         performSegue(withIdentifier: "signOut", sender: self)
+    }
+    @objc func create(_ sender: AnyObject) {
+        performSegue(withIdentifier: "toCreate", sender: self)
     }
 }

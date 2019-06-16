@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FD1ABDF2EFDBC42B80AC8AF /* Pods_socialapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9145BE5CEEB116917B3D67BF /* Pods_socialapp.framework */; };
+		82517DC122AAA72000C4165F /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82517DC022AAA72000C4165F /* CreateVC.swift */; };
 		8299B598228F2DA700D09258 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8299B597228F2DA600D09258 /* GoogleService-Info.plist */; };
 		82C7558522890474009E1938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7558422890474009E1938 /* AppDelegate.swift */; };
 		82C7558722890474009E1938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7558622890474009E1938 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		7541C764E7766FAE3E1938E8 /* Pods-socialapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialapp.release.xcconfig"; path = "Target Support Files/Pods-socialapp/Pods-socialapp.release.xcconfig"; sourceTree = "<group>"; };
+		82517DC022AAA72000C4165F /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		8299B597228F2DA600D09258 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82C7558122890474009E1938 /* socialapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C7558422890474009E1938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				82C7558422890474009E1938 /* AppDelegate.swift */,
 				82C7558622890474009E1938 /* ViewController.swift */,
 				82DF209C228BC82600804AB2 /* FeedVC.swift */,
+				82517DC022AAA72000C4165F /* CreateVC.swift */,
 				82C7558822890474009E1938 /* Main.storyboard */,
 				82C7558B22890475009E1938 /* Assets.xcassets */,
 				82C7559022890475009E1938 /* Info.plist */,
@@ -227,6 +230,7 @@
 			files = (
 				82DF209D228BC82600804AB2 /* FeedVC.swift in Sources */,
 				82C7558722890474009E1938 /* ViewController.swift in Sources */,
+				82517DC122AAA72000C4165F /* CreateVC.swift in Sources */,
 				82C7558522890474009E1938 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

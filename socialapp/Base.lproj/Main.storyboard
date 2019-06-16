@@ -153,9 +153,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMX-Nv-Ojc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="86"/>
+            <point key="canvasLocation" x="-645" y="7"/>
         </scene>
-        <!--Feed-->
+        <!--Item-->
         <scene sceneID="Rnl-dV-mUd">
             <objects>
                 <tableViewController id="mpN-UM-dLm" customClass="FeedVC" customModule="socialapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,15 +168,81 @@
                             <outlet property="delegate" destination="mpN-UM-dLm" id="Zzc-eB-3Nd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Feed" id="11w-4p-tVZ"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="hrc-Ma-Jx8"/>
+                    <navigationItem key="navigationItem" id="11w-4p-tVZ"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="H7I-l1-HZD" kind="unwind" identifier="signOut" unwindAction="unwindToVC1WithSegue:" id="mPB-wD-GIe"/>
+                        <segue destination="rz3-1Z-01W" kind="show" identifier="toCreate" id="tln-N4-1He"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="su3-P8-VTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="H7I-l1-HZD" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="su3-P8-VTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492.753623188406" y="6.5217391304347831"/>
+            <point key="canvasLocation" x="1493" y="7"/>
+        </scene>
+        <!--CreateVC-->
+        <scene sceneID="Wc9-mq-ReD">
+            <objects>
+                <viewController id="rz3-1Z-01W" customClass="CreateVC" customModule="socialapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eix-ND-iWq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x75-4g-q43">
+                                <rect key="frame" x="179" y="188" width="56" height="30"/>
+                                <state key="normal" title="+ Image"/>
+                                <connections>
+                                    <action selector="getPhoto:" destination="rz3-1Z-01W" eventType="touchUpInside" id="bmc-4m-IBJ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cPo-ry-CQA">
+                                <rect key="frame" x="87" y="316" width="240" height="153"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="uJm-XY-8PN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg1-bl-ZUv">
+                                <rect key="frame" x="162" y="584" width="80" height="30"/>
+                                <state key="normal" title="Create Post"/>
+                                <connections>
+                                    <action selector="createPost:" destination="rz3-1Z-01W" eventType="touchUpInside" id="tbk-Oq-JDN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTH-Pe-olh">
+                                <rect key="frame" x="152" y="153" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="R9S-4f-Ah1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cPo-ry-CQA" firstAttribute="top" secondItem="oTH-Pe-olh" secondAttribute="bottom" constant="63" id="1HX-Fs-1KA"/>
+                            <constraint firstItem="cPo-ry-CQA" firstAttribute="centerX" secondItem="x75-4g-q43" secondAttribute="centerX" id="2WF-wr-cWl"/>
+                            <constraint firstItem="cPo-ry-CQA" firstAttribute="centerX" secondItem="eix-ND-iWq" secondAttribute="centerX" id="36d-eI-rU2"/>
+                            <constraint firstItem="oTH-Pe-olh" firstAttribute="centerY" secondItem="x75-4g-q43" secondAttribute="centerY" id="8C5-Zh-9gU"/>
+                            <constraint firstItem="cPo-ry-CQA" firstAttribute="leading" secondItem="sBO-q5-Rqe" secondAttribute="leading" constant="87" id="FTh-XF-9nZ"/>
+                            <constraint firstItem="bg1-bl-ZUv" firstAttribute="centerX" secondItem="oTH-Pe-olh" secondAttribute="centerX" id="WXo-R1-mgI"/>
+                            <constraint firstItem="sBO-q5-Rqe" firstAttribute="bottom" secondItem="bg1-bl-ZUv" secondAttribute="bottom" constant="122" id="ZIA-jh-Rda"/>
+                            <constraint firstItem="sBO-q5-Rqe" firstAttribute="trailing" secondItem="oTH-Pe-olh" secondAttribute="trailing" constant="162" id="dCR-wI-XWj"/>
+                            <constraint firstItem="bg1-bl-ZUv" firstAttribute="leading" secondItem="sBO-q5-Rqe" secondAttribute="leading" constant="162" id="dTU-H7-UTN"/>
+                            <constraint firstItem="oTH-Pe-olh" firstAttribute="top" secondItem="sBO-q5-Rqe" secondAttribute="top" constant="89" id="eyG-6p-TGy"/>
+                            <constraint firstItem="oTH-Pe-olh" firstAttribute="leading" secondItem="sBO-q5-Rqe" secondAttribute="leading" constant="152" id="ivP-C3-fSZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sBO-q5-Rqe"/>
+                    </view>
+                    <connections>
+                        <outlet property="captext" destination="cPo-ry-CQA" id="u6P-y1-1u5"/>
+                        <outlet property="userImgView" destination="oTH-Pe-olh" id="fWQ-HW-r24"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rhy-V2-0sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="-647"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dRP-7N-DAr">
@@ -189,12 +255,30 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mpN-UM-dLm" kind="relationship" relationship="rootViewController" id="rOs-jC-L1T"/>
+                        <segue destination="zJl-x8-Gw4" kind="relationship" relationship="rootViewController" id="rOs-jC-L1T"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YE9-Mt-buR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.75362318840587" y="6.5217391304347831"/>
+            <point key="canvasLocation" x="107" y="7"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="83d-Fk-wFo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zJl-x8-Gw4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RKW-m4-XeC"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eeW-qO-Mlq">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mpN-UM-dLm" kind="relationship" relationship="viewControllers" id="ORY-Qe-kRI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="68F-UE-590" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="7"/>
         </scene>
     </scenes>
 </document>

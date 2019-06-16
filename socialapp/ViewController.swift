@@ -61,9 +61,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     "email": self.emailField.text as Any,
                     "password": self.passwordField.text as Any,
                     "userImg": "myPics/\(userUid).jpeg" as Any,
-                    "ID": userUid as Any
+                    "ID": userUid as Any,
+                    "currentPostNumber": 0
                     ] as [String : Any]
-                Database.database().reference().child("users").child(userUid).setValue(userData)
+                Database.database().reference().child("users").child(self.usernameField.text as Any as! String).setValue(userData)
             }
         }
     }
@@ -127,10 +128,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         imagePicker.delegate = self
         scrollView.isScrollEnabled = false
         self.reset()
-        usernameField.delegate = self as! UITextFieldDelegate
-        fullName.delegate = self as! UITextFieldDelegate
-        emailField.delegate = self as! UITextFieldDelegate
-        passwordField.delegate = self as! UITextFieldDelegate
+        usernameField.delegate = self as UITextFieldDelegate
+        fullName.delegate = self as UITextFieldDelegate
+        emailField.delegate = self as UITextFieldDelegate
+        passwordField.delegate = self as UITextFieldDelegate
         }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -140,7 +141,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        selectedImage = nil
+        userImgView = nil
     }
     
     @IBAction func signInPressed(_ sender: Any) {
