@@ -9,23 +9,32 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UITableViewController{
+class FeedVC: UITableViewController {
+    var dataArray: NSArray = []
+    
+    func getDataFromAPI(following: Array<String>) {
+        //Call your api function here
+        gatherData(following: following) { results in
+            self.dataArray = results
+            self.tableView.reloadData() //Then reload your tableView
+        }
+    }
     
     @IBAction func backToFeed(segue:UIStoryboardSegue) {
     }
     
     override func viewDidLoad() {
+        dataArray = []
+        self.getDataFromAPI(following: ["09IPDwPtrKSwn2f5TBccLveUj342"])
         super.viewDidLoad()
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
-        navigationItem.title = "Fifer"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(create))
-        let tab = self.tabBarController?.tabBar
-        tab?.barStyle = UIBarStyle.black
-        tab?.tintColor = UIColor.yellow
-        tabBarItem.title = "Feed"
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
+        self.tabBarController!.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(create))
+        self.tabBarController!.navigationItem.title = "Fifer"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+//        self.getDataFromAPI(following: ["UwaITPZP1nUY6M2Tht3cPLau8Du1"])
     }
 
     
@@ -35,11 +44,24 @@ class FeedVC: UITableViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return dataArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellPost", for: indexPath) as? postCell else { fatalError() }
+        let post = dataArray[indexPath.row] as! Array<Any>
+        print(dataArray)
+        cell.captionTextLabel.text = (post[1] as! String)
+        cell.postedImageView.image = (post[2] as! UIImage)
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 322
     }
     
     @objc func signOut(_ sender: AnyObject) {

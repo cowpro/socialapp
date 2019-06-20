@@ -21,11 +21,6 @@ class CreateVC: UIViewController, UITextViewDelegate {
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.delegate = self as  UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
-        navigationItem.title = "Create Post"
-        captext.delegate = self as UITextViewDelegate
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -49,8 +44,6 @@ class CreateVC: UIViewController, UITextViewDelegate {
         let userUid = Auth.auth().currentUser!.uid
         let ref = Database.database().reference(withPath: "/users/\(userUid)/")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            print (snapshot.key)
             let value = snapshot.value as! NSDictionary
             let postID = value["currentPostNumber"] as! Int
             if let data = self.userImgView.image!.jpegData(compressionQuality: 0.2) {
