@@ -16,6 +16,7 @@
 		82C7558722890474009E1938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7558622890474009E1938 /* ViewController.swift */; };
 		82C7558A22890474009E1938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C7558822890474009E1938 /* Main.storyboard */; };
 		82C7558C22890475009E1938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C7558B22890475009E1938 /* Assets.xcassets */; };
+		82CC829922C7E0D50086BEBF /* imageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC829822C7E0D50086BEBF /* imageResizer.swift */; };
 		82DF209D228BC82600804AB2 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF209C228BC82600804AB2 /* FeedVC.swift */; };
 		82EE4E3E228E096800DA4E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EE4E3D228E096800DA4E7F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		82C7558922890474009E1938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82C7558B22890475009E1938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C7559022890475009E1938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82CC829822C7E0D50086BEBF /* imageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageResizer.swift; sourceTree = "<group>"; };
 		82DF209C228BC82600804AB2 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		82EE4E3D228E096800DA4E7F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9145BE5CEEB116917B3D67BF /* Pods_socialapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				82DF209C228BC82600804AB2 /* FeedVC.swift */,
 				82517DC022AAA72000C4165F /* CreateVC.swift */,
 				82C50C7722B750B1005CF3FF /* dataComplier.swift */,
+				82CC829822C7E0D50086BEBF /* imageResizer.swift */,
 				82C7558822890474009E1938 /* Main.storyboard */,
 				82C7558B22890475009E1938 /* Assets.xcassets */,
 				82C7559022890475009E1938 /* Info.plist */,
@@ -179,26 +182,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-socialapp/Pods-socialapp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-socialapp/Pods-socialapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-socialapp/Pods-socialapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -238,6 +226,7 @@
 				8289AE0222BB4B9E0015218F /* postCell.swift in Sources */,
 				82C7558722890474009E1938 /* ViewController.swift in Sources */,
 				82517DC122AAA72000C4165F /* CreateVC.swift in Sources */,
+				82CC829922C7E0D50086BEBF /* imageResizer.swift in Sources */,
 				82C7558522890474009E1938 /* AppDelegate.swift in Sources */,
 				82C50C7822B750B1005CF3FF /* dataComplier.swift in Sources */,
 			);

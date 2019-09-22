@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UITableViewController {
+class FeedVC: UITableViewController, postCellDelegate {
     var dataArray: NSArray = []
     
     func getDataFromAPI(following: Array<String>) {
@@ -25,7 +25,7 @@ class FeedVC: UITableViewController {
     
     override func viewDidLoad() {
         dataArray = []
-        self.getDataFromAPI(following: ["09IPDwPtrKSwn2f5TBccLveUj342"])
+        self.getDataFromAPI(following: ["ULNuYUvBg0QsqynHojtcxq7zCae2"])
         super.viewDidLoad()
         self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
         self.tabBarController!.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(create))
@@ -34,7 +34,6 @@ class FeedVC: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        self.getDataFromAPI(following: ["UwaITPZP1nUY6M2Tht3cPLau8Du1"])
     }
 
     
@@ -57,11 +56,28 @@ class FeedVC: UITableViewController {
         print(dataArray)
         cell.captionTextLabel.text = (post[1] as! String)
         cell.postedImageView.image = (post[2] as! UIImage)
+        cell.username.text = (post[3] as! String)
+        cell.profileLabel.text = (post[4] as! String)
+        cell.likeCount.text = "\(post[5])"
+        cell.profileImg.image = (post[6] as! UIImage)
+        cell.delegate = self
         return cell
+    }
+
+    func like() {
+        print("like")
+    }
+    
+    func comment() {
+        print("comment")
+    }
+    
+    func share() {
+        print("share")
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 322
+        return 662
     }
     
     @objc func signOut(_ sender: AnyObject) {
@@ -77,3 +93,15 @@ class FeedVC: UITableViewController {
         performSegue(withIdentifier: "toCreate", sender: self)
     }
 }
+
+//extension FeedVC{
+//
+//    var tableView:UITableView?{
+//        return superview as? UITableView
+//    }
+//
+//    var indexPath:IndexPath?{
+//        return tableView?.indexPath(for: self)
+//    }
+//
+//}

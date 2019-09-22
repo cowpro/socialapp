@@ -54,8 +54,10 @@ class CreateVC: UIViewController, UITextViewDelegate {
                     let userData = [
                         "caption": self.captext.text as String,
                         "userImg": "/posts/\(String(describing: userUid))/\(postID).jpeg" as String,
-                        "ID": "\(userUid)"
-                        ] as [String : String]
+                        "likes": 0,
+                        "ID": "\(userUid)",
+                        "likedBy": [""]
+                        ] as [String : AnyObject]
                     Database.database().reference().child("posts").child("\(String(describing: userUid))").child("\(postID)").setValue(userData)
                 }
             }
